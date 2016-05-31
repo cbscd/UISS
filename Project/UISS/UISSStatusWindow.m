@@ -46,7 +46,7 @@
 - (CGRect)frameForOrientation:(UIInterfaceOrientation)orientation;
 {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    CGFloat height = 20;
+    CGFloat height = 20.0f;
     
     switch (orientation) {
         case UIInterfaceOrientationLandscapeLeft:

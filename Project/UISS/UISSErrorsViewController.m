@@ -35,7 +35,7 @@
 
 - (void)update {
     if (self.errors.count) {
-        self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", self.errors.count];
+        self.tabBarItem.badgeValue = [@(self.errors.count) stringValue];
     } else {
         self.tabBarItem.badgeValue = nil;
     }

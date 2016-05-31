@@ -53,10 +53,10 @@
         NSDictionary *dictionary = (NSDictionary *) value;
 
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-        [self convertProperty:UISS_FONT_KEY fromDictionary:dictionary toDictionary:attributes withKey:UITextAttributeFont
+        [self convertProperty:UISS_FONT_KEY fromDictionary:dictionary toDictionary:attributes withKey:NSFontAttributeName
                usingConverter:self.fontConverter];
 
-        [self convertProperty:UISS_TEXT_COLOR_KEY fromDictionary:dictionary toDictionary:attributes withKey:UITextAttributeTextColor
+        [self convertProperty:UISS_TEXT_COLOR_KEY fromDictionary:dictionary toDictionary:attributes withKey:NSForegroundColorAttributeName
                usingConverter:self.colorConverter];
 
         [self convertProperty:UISS_TEXT_SHADOW_COLOR_KEY fromDictionary:dictionary toDictionary:attributes withKey:UITextAttributeTextShadowColor
@@ -82,12 +82,12 @@
 
         id fontValue = [dictionary objectForKey:UISS_FONT_KEY];
         if (fontValue) {
-            [objectAndKeys appendFormat:@"%@, %@,", [self.fontConverter generateCodeForValue:fontValue], @"UITextAttributeFont"];
+            [objectAndKeys appendFormat:@"%@, %@,", [self.fontConverter generateCodeForValue:fontValue], @"NSFontAttributeName"];
         }
 
         id textColorValue = [dictionary objectForKey:UISS_TEXT_COLOR_KEY];
         if (textColorValue) {
-            [objectAndKeys appendFormat:@"%@, %@,", [self.colorConverter generateCodeForValue:textColorValue], @"UITextAttributeTextColor"];
+            [objectAndKeys appendFormat:@"%@, %@,", [self.colorConverter generateCodeForValue:textColorValue], @"NSForegroundColorAttributeName"];
         }
 
         id textShadowColor = [dictionary objectForKey:UISS_TEXT_SHADOW_COLOR_KEY];
